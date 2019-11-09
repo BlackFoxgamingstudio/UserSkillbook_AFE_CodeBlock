@@ -1,0 +1,42 @@
+<h1>{{actionType}} Code post</h1>
+<form [formGroup]="form" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+  <div class="form-group row">
+    <label class=" control-label col-md-12">code</label>
+    <div class="col-md-12">
+      <input class="form-control" type="text" formControlName="Code">
+    </div>
+  
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12" for="Description">Description text</label>
+    <div class="col-md-12">
+      <textarea class="form-control" rows="15" formControlName="Description"></textarea>
+    </div>
+   
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12" for="imageurl">imageurl </label>
+    <div class="col-md-12">
+      <textarea class="form-control" rows="3" formControlName="imageurl"></textarea>
+    </div>
+   
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12" for="Sourcename">Sourcename text</label>
+    <div class="col-md-12">
+      <textarea class="form-control" rows="3" formControlName="Sourcename"></textarea>
+    </div>
+ 
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12" for="docurl">docurl text</label>
+    <div class="col-md-12">
+      <textarea class="form-control" rows="3" formControlName="docurl"></textarea>
+    </div>
+  
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success float-right">Save</button>
+    <button class="btn btn-secondary float-left" (click)="cancel()">Cancel</button>
+  </div>
+</form>

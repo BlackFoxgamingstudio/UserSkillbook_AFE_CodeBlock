@@ -1,0 +1,46 @@
+
+
+<h1>CodeBlock Posts</h1>
+
+<p *ngIf="!(blogPosts$ | async)"><em>Loading...</em></p>
+<p>
+  <a [routerLink]="['/add']" class="btn btn-primary float-right mb-3">New post</a>
+</p>
+
+<table class="table table-sm table-hover" *ngIf="(blogPosts$ | async)?.length>0">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Code</th>
+      <th>Description</th>
+      <th>docurl</th>
+      <th>Sourcename</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let blogPost of (blogPosts$ | async)">
+      <td>{{ blogPost.CId }}</td>
+      <td><a [routerLink]="['/blogpost/', blogPost.CId]">{{ blogPost.Code }}</a></td>
+      <td>{{ blogPost.Description }}</td>
+      <td>{{ blogPost.docurl }}</td>
+      <td> <img src="{{ blogPost.Sourcename }}" height="55" alt="Italian Trulli"></td>
+      <td><a [routerLink]="['/blogpost/edit/', blogPost.CId]" class="btn btn-primary btn-sm float-right">Edit</a></td>
+      <td><a [routerLink]="" (click)="delete(blogPost.CId)" class="btn btn-danger btn-sm float-right">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<p>Welcome to your new single-page application, built with:</p>
+
+<li> ASP.NET Core and C# for cross-platform server-side code</li>
+<li>  Angular and TypeScript for client-side code</li>
+<li>   Bootstrap for layout and styling</li>
+
+<p>I will Use Ths Template to show User Post CodeBlocks From Examples They Are studying TO gain new Skills. Thus this solutions is part of what we call A UserSkillBook.</p>
+
+<li> My next step is to add Autho for users for Multi Tenent Access.</li>
+<li>next I will deploy this app as a Container and Add Kubernettes so that deployment can scale to user needs</li>
+<li>Lastly I will host this App as a Microsirves on a User Profile side. this Profile site will have a gamefined Form to edit info an all Microsverse. THe user will experince an ablity to use one site to create a DevOps Plan for Creationg Software solutions. but the first version will be a bug tracker.</li>
+<br>
